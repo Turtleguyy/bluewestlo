@@ -3,9 +3,18 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'bluewestlo',
+    podModulePrefix: 'bluewestlo/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
+
+    fontawesome: {
+      defaultPrefix: 'fab',
+      icons: {
+        'free-brands-svg-icons': 'all'
+      }
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
