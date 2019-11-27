@@ -1,5 +1,56 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<section>
+  <header>
+    <img class="logo" src="/assets/images/logo.png" alt="Blue Westlo">
+    <img class="banner" src="/assets/images/banner.png" alt="Banner">
+  </header>
 
-{{outlet}}
+  <nav>
+    <a class="teespring" href="https://teespring.com/stores/bluewestlo">
+      <i>{{fa-icon "store" prefix="fas"}}</i>
+      <span>
+        Merch
+      </span>
+    </a>
+
+    <a class="twitch" href="https://www.twitch.tv/bluewestlo">
+      <i>{{fa-icon "twitch"}}</i>
+      <span>
+        Twitch
+        {{#if this.model.twitch}}
+          <div class="followers">
+            {{number-shortener this.model.twitch}}
+          </div>
+        {{/if}}
+      </span>
+    </a>
+
+    <a class="twitter" href="https://twitter.com/BlueWestlo">
+      <i>{{fa-icon "twitter"}}</i>
+      <span>
+        Twitter
+        {{#if this.model.twitter}}
+          <div class="followers">
+            {{number-shortener this.model.twitter}}
+          </div>
+        {{/if}}
+      </span>
+    </a>
+
+    <a class="youtube" href="https://www.youtube.com/bluewestlo">
+      <i>{{fa-icon "youtube"}}</i>
+      <span>
+        YouTube
+        {{#if this.model.youtube}}
+          <div class="followers">
+            {{number-shortener this.model.youtube}}
+          </div>
+        {{/if}}
+      </span>
+    </a>
+  </nav>
+
+  <footer>
+    Lovingly created by
+    <a href="https://turtleguyy.com/" target="_blank" rel="noopener">@turtleguyy</a> for one of the most talented people I know.
+  </footer>
+</section>

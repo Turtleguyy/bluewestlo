@@ -11,7 +11,8 @@ module.exports = function(environment) {
     fontawesome: {
       defaultPrefix: 'fab',
       icons: {
-        'free-brands-svg-icons': 'all'
+        'free-solid-svg-icons': ['store'],
+        'free-brands-svg-icons': ['twitch', 'twitter', 'youtube']
       }
     },
 

@@ -1,0 +1,109 @@
+@font-face
+  font-family: 'DraftB'
+  src: url('fonts/DraftB.eot')
+  src: url('fonts/DraftB.eot?#iefix') format('embedded-opentype'), url('fonts/DraftB.woff2') format('woff2'), url('fonts/DraftB.woff') format('woff'), url('fonts/DraftB.ttf')  format('truetype')
+
+@mixin mobile-ish
+  @media (max-width: 768px), (max-height: 700px)
+    @content
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+body
+  background-color: #fff
+  font: 36px DraftB, sans-serif
+
+section
+  min-height: 95vh
+  display: flex
+  flex-direction: column
+  overflow: scroll
+  -webkit-overflow-scrolling: touch
+
+header
+  display: flex
+  align-items: center
+  flex-direction: column
+  background: #0fc6eb
+
+  .logo
+    margin: 40px 0 20px
+    width: 120px
+    max-width: 75%
+    +mobile-ish
+      width: 200px
+
+  .banner
+    width: 100%
+    +mobile-ish
+      display: none
+
+nav
+  padding: 20px
+  min-height: min-content
+  display: flex
+  align-content: flex-start
+  flex: 1 1 auto
+  flex-wrap: wrap
+  justify-content: center
+
+  a
+    margin: 20px
+    padding-right: 30px
+    max-width: 320px
+    height: 109px
+    display: flex
+    align-items: center
+    background: url('/assets/images/button.png') no-repeat left center
+    background-size: cover
+    color: white
+    font: 30px DraftB, sans-serif
+    font-weight: 100
+    text-decoration: none
+    text-shadow: 0 0 7px #66f, 0 0 15px #66f
+    text-transform: uppercase
+    +mobile-ish
+      width: 320px
+
+  i
+    margin-right: 15px
+    width: 102px
+    height: 100%
+    padding: 0 15px 0 21px
+    display: flex
+    align-items: center
+    justify-content: center
+
+  span
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    line-height: 1
+
+  .followers
+    margin-left: 5px
+    padding: 3px 7px 2px
+    display: inline-block
+    background: rgba(0,0,0,0.4)
+    border-top: 1px solid rgba(0,0,0,0.25)
+    border-radius: inherit
+    font-size: 0.6em
+    text-shadow: 0 1px 0 rgba(0,0,0,0.25)
+
+footer
+  padding: 20px 0
+  font: 16px Avenir, Helvetica, sans-serif
+
+  &, *
+    color: rgba(0,0,0,0.25)
+    text-align: center
+    text-decoration: none
+    transition: color 200ms ease
+
+  a:hover
+    color: rgba(0,0,0,0.5)
