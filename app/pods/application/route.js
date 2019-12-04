@@ -25,7 +25,9 @@ export default Route.extend({
       youtube: fetch(youtubeURL)
         .then(response => response.json())
         .then(data => {
-          if (data.items.length) return data.items[0].statistics.subscriberCount
+          if (data.items && data.items.length) {
+            return data.items[0].statistics.subscriberCount
+          }
         })
     })
   }
